@@ -1,0 +1,18 @@
+.container {
+   max-width: 1280px;
+}
+
+.center {
+   margin: 0 auto;
+}
+
+.header {
+   margin: 0 auto;
+   background-color: #000;
+}
+
+.logo {
+   text-align: center;
+   font-size: 3rem;
+   color: #fff;
+}
