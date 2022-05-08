@@ -57,11 +57,30 @@ body {
 }
 
 .all-movies {
-   display: flex;
-   flex-wrap: wrap;
-   gap: 20px;
-   justify-content: center;
-   align-items: center;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 1rem;
+   align-items: flex-start;
+}
+
+.movie-image {
+   overflow: hidden;
+   height: 350px;
+}
+
+.movie-image img {
+   display: block;
+   width: 100%;
+   object-fit: cover;
+   object-position: center;
+}
+
+.movie-info {
+   background-color: #A0732E;
+}
+
+.movie-info p {
+   font-size: 1rem;
 }
 
 

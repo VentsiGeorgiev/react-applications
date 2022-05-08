@@ -43,25 +43,22 @@ function App() {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             <button className='search-btn' onClick={() => searchMovies(searchTerm)}>Search</button>
-
-
-            {
-              movies?.length > 0
-                ? (
-                  <div className="all-movies">
-                    {movies.map((movie) =>
-                      <MovieCard movie={movie} />
-                    )}
-                  </div>
-                ) : (
-                  <div className='empty'>
-                    <h2>No Movies Found</h2>
-                  </div>
-                )
-            }
-
-
           </div>
+
+          {
+            movies?.length > 0
+              ? (
+                <div className="all-movies">
+                  {movies.map((movie) =>
+                    <MovieCard movie={movie} />
+                  )}
+                </div>
+              ) : (
+                <div className='empty'>
+                  <h2>No Movies Found</h2>
+                </div>
+              )
+          }
         </div>
       </main>
     </>
