@@ -9,10 +9,12 @@ function App() {
   const [feedback, setFeedback] = useState(FeedbackData)
 
   return (
-    <div className="container">
+    <>
       <Header />
-      <FeedbackList feedback={feedback} />
-    </div>
+      <div className="container">
+        <FeedbackList feedback={feedback} />
+      </div>
+    </>
 
   )
 }

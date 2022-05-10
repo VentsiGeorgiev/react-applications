@@ -1,10 +1,12 @@
+import Card from './shared/Card';
+
 function FeedbackItem({ item }) {
 
   return (
-    <div className="card">
+    <Card>
       <div className="num">{item.rating}</div>
-      <div className="num">{item.text}</div>
-    </div>
+      <div className="text">{item.text}</div>
+    </Card>
   )
 }
 export default FeedbackItem;
