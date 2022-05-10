@@ -57,3 +57,13 @@ header {
   font-size: 1.2rem;
   margin-top: 10px;
 }
+
+.buttons {
+  text-align: right;
+}
+
+.close {
+  border: none;
+  background-color: #fff;
+  margin: 0 3px;
+}
