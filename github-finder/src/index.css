@@ -142,6 +142,10 @@ footer {
   .user-image img {
     width: 150px;
   }
+
+  .card {
+    border: none;
+  }
 }
 
 @media (min-width: 1028px) {
@@ -151,5 +155,9 @@ footer {
 
   .user-image img {
     width: 200px;
+  }
+
+  .card {
+    border: none;
   }
 }
