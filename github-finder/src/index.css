@@ -46,3 +46,14 @@ footer {
   background-color: var(--primary-color);
   margin: auto;
 }
+
+.about,
+.not-found {
+  text-align: center;
+}
+
+.not-found-link {
+  color: #fff;
+  padding: 5px;
+  margin-top: 20px;
+}
