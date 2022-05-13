@@ -5,25 +5,28 @@ import About from './components/pages/About';
 import NotFound from './components/pages/NotFound';
 import Footer from './components/layout/Footer';
 import Navbar from './components/layout/Navbar';
+import { GithubProvider } from './context/github/GithubContext'
 
 function App() {
   return (
-    <Router>
+    <GithubProvider>
+      <Router>
 
-      <Navbar />
+        <Navbar />
 
-      <main className='container'>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/*' element={<NotFound />} />
-        </Routes>
-      </main>
+        <main className='container'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/*' element={<NotFound />} />
+          </Routes>
+        </main>
 
-      <Footer />
+        <Footer />
 
 
-    </Router>
+      </Router>
+    </GithubProvider>
   );
 }
 
