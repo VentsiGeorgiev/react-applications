@@ -3,15 +3,17 @@ import GithubContext from "../../context/github/GithubContext"
 import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom"
 import Spinner from "../layout/Spinner"
+import RepoList from "../repos/RepoList"
 import './User.css';
 
 function User() {
-  const { getUser, user, loading } = useContext(GithubContext)
+  const { getUser, user, loading, getUserRepos, repos } = useContext(GithubContext)
 
   const params = useParams()
 
   useEffect(() => {
     getUser(params.login)
+    getUserRepos(params.login)
   }, [])
 
   if (loading) {
@@ -37,6 +39,10 @@ function User() {
 
   return <>
     <div className="user">
+      <div className="back-btn">
+        <Link to='/'>Back To Search</Link>
+
+      </div>
       <div className="user-profile">
 
         <div className="user-image">
@@ -82,7 +88,7 @@ function User() {
       </div>
 
 
-
+      <RepoList repos={repos}></RepoList>
     </div>
   </>
 }
