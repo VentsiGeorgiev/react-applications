@@ -1,0 +1,54 @@
+.user {
+  margin: 30px 20px;
+}
+
+.user-profile {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+}
+
+.user-image {
+  position: relative;
+  width: 150px;
+}
+
+.username {
+  position: absolute;
+  bottom: 15px;
+  left: 8px;
+}
+
+.user-image img {
+  width: 100%;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.github-profile-link {
+  margin: 20px 0;
+}
+
+a {
+  color: #fff;
+}
+
+.github-link {
+  border: 1px solid #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.github-link:hover {
+  background-color: #fff;
+  color: #04293A;
+}
+
+.location {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}

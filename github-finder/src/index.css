@@ -94,12 +94,14 @@ footer {
 /* form */
 .searchform {
   text-align: center;
+
 }
 
 .search-input {
   height: 40px;
   width: 250px;
   border: none;
+  margin-top: 30px;
 }
 
 .search-btn {
