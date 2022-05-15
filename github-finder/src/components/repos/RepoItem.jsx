@@ -5,12 +5,12 @@ function RepoItem({ repo }) {
     forks
   } = repo
   return (
-    <div>
+    <div className="repo-card">
       <ul>
-        <hr />
-        <li>{name}</li>
-        <li>{description}</li>
-        <li>{forks}</li>
+
+        <li>Name: {name}</li>
+        <li>Description: {description}</li>
+        <li>Forks: {forks}</li>
 
       </ul>
     </div>

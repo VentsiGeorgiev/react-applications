@@ -150,6 +150,20 @@ footer {
   }
 }
 
+.latest-repo {
+  margin-top: 30px;
+}
+
+.repo-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.repo-card {
+  border-bottom: 1px solid #fff;
+  margin-bottom: 20px;
+}
+
 @media (min-width: 1028px) {
   .user-list {
     grid-template-columns: repeat(4, 1fr);

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom"
 import Spinner from "../layout/Spinner"
 import RepoList from "../repos/RepoList"
 import './User.css';
+import { FaConnectdevelop, FaUsers, FaUser, FaStore } from "react-icons/fa"
+
 
 function User() {
   const { getUser, user, loading, getUserRepos, repos } = useContext(GithubContext)
@@ -78,12 +80,47 @@ function User() {
         )}
       </div>
 
-      <div className="user-stat">
-
-        <p>Followers: {followers}</p>
-        <p>Following: {following}</p>
-        <p>Public Repos: {public_repos}</p>
-        <p>Public Gists: {public_repos}</p>
+      <div className="user-stats">
+        {/* # 1 */}
+        <div className="stat">
+          <div className="stat-info">
+            <p>Followers</p>
+            <span>{followers}</span>
+          </div>
+          <div className="stat-icon">
+            <FaUsers className="user-stat-icon"></FaUsers>
+          </div>
+        </div>
+        {/* # 2 */}
+        <div className="stat">
+          <div className="stat-info">
+            <p>Following</p>
+            <span>{following}</span>
+          </div>
+          <div className="stat-icon">
+            <FaUser></FaUser>
+          </div>
+        </div>
+        {/* # 3 */}
+        <div className="stat">
+          <div className="stat-info">
+            <p>Followers</p>
+            <span>{public_repos}</span>
+          </div>
+          <div className="stat-icon">
+            <FaConnectdevelop></FaConnectdevelop>
+          </div>
+        </div>
+        {/* # 4 */}
+        <div className="stat">
+          <div className="stat-info">
+            <p>Followers</p>
+            <span>{public_repos}</span>
+          </div>
+          <div className="stat-icon">
+            <FaStore></FaStore>
+          </div>
+        </div>
 
       </div>
 
