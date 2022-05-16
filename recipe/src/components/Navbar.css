@@ -1,11 +1,14 @@
 .navbar {
   background-color: var(--primary-color);
+
 }
 
 .navbar nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo-title {

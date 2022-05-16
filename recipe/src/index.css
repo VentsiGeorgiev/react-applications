@@ -25,7 +25,8 @@ body {
   color: var(--dark-gray);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+.error,
+.loading {
+  text-align: center;
+  margin: 40px auto;
 }
