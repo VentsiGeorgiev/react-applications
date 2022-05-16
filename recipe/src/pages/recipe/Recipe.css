@@ -1,0 +1,36 @@
+.recipe {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 40px 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.recipe-title {
+  margin-bottom: 10px;
+}
+
+.ingredients h3 {
+  text-align: center;
+  margin: 10px 0 15px;
+}
+
+.all-ingredients {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.all-ingredients li::after {
+  content: ",";
+}
+
+.recipe li:last-child::after {
+  content: ".";
+}
+
+.method {
+  text-align: left;
+}
