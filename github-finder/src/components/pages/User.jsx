@@ -1,22 +1,31 @@
+import { FaConnectdevelop, FaUsers, FaUser, FaStore } from "react-icons/fa"
 import { useEffect, useContext } from "react"
-import GithubContext from "../../context/github/GithubContext"
 import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom"
+import GithubContext from "../../context/github/GithubContext"
 import Spinner from "../layout/Spinner"
 import RepoList from "../repos/RepoList"
+import { getUser, getUserRepos } from "../../context/github/GithubActions"
 import './User.css';
-import { FaConnectdevelop, FaUsers, FaUser, FaStore } from "react-icons/fa"
 
 
 function User() {
-  const { getUser, user, loading, getUserRepos, repos } = useContext(GithubContext)
+  const { user, loading, repos, dispatch } = useContext(GithubContext)
 
   const params = useParams()
 
   useEffect(() => {
-    getUser(params.login)
-    getUserRepos(params.login)
-  }, [])
+    dispatch({ type: 'SET_LOADING' })
+    const getUserData = async () => {
+      const userData = await getUser(params.login)
+      dispatch({ type: 'GET_USER', payload: userData })
+
+      const userRepoData = await getUserRepos(params.login)
+      dispatch({ type: 'GET_REPOS', payload: userRepoData })
+    }
+
+    getUserData()
+  }, [dispatch, params.login])
 
   if (loading) {
     return <Spinner />
@@ -29,7 +38,6 @@ function User() {
     bio,
     blog,
     twitter_username,
-    login,
     html_url,
     followers,
     following,
@@ -37,7 +45,6 @@ function User() {
     public_gists,
   } = user
 
-  console.log(user);
 
   return <>
     <div className="user">
@@ -60,6 +67,7 @@ function User() {
             <a
               href={html_url}
               target="_blank"
+              rel="noreferrer"
               className="github-link">
               Visit GitHub Profile
             </a>
@@ -73,10 +81,10 @@ function User() {
           <p>Location: {location}</p>
         )}
         {blog && (
-          <p>Blog: <a target="_blank" href={`https://${blog}`}>{blog}</a></p>
+          <p>Blog: <a target="_blank" rel="noreferrer" href={`https://${blog}`}>{blog}</a></p>
         )}
         {twitter_username && (
-          <p>Twitter: <a target="_blank" href={`https://twitter.com/${twitter_username}`}>{twitter_username}</a></p>
+          <p>Twitter: <a target="_blank" rel="noreferrer" href={`https://twitter.com/${twitter_username}`}>{twitter_username}</a></p>
         )}
       </div>
 
@@ -115,7 +123,7 @@ function User() {
         <div className="stat">
           <div className="stat-info">
             <p>Followers</p>
-            <span>{public_repos}</span>
+            <span>{public_gists}</span>
           </div>
           <div className="stat-icon">
             <FaStore></FaStore>
