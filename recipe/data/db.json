@@ -36,6 +36,24 @@
       ],
       "method": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse minima ex rem quis similique eum ratione quaerat, voluptas molestias ut repudiandae delectus voluptates. Eius esse at tenetur ab accusamus excepturi?",
       "cookingTime": "35 minutes"
+    },
+    {
+      "title": "pizza",
+      "ingredients": [
+        "tomato, cheese"
+      ],
+      "method": "method of cooking pizzaaaaa",
+      "cookingTime": "15 minutes",
+      "id": "Hvb3Sw9"
+    },
+    {
+      "title": "asd",
+      "ingredients": [
+        "asd"
+      ],
+      "method": "dsa",
+      "cookingTime": "2 minutes",
+      "id": "W6sraUP"
     }
   ]
 }
