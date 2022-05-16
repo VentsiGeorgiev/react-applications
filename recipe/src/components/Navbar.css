@@ -1,0 +1,18 @@
+.navbar {
+  background-color: var(--primary-color);
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-title {
+  color: var(--light-color);
+  font-size: 2rem;
+}
+
+.links a {
+  color: var(--light-color);
+}
