@@ -40,7 +40,7 @@ function SingIn() {
 
           <div className="passwordInputDiv">
             <input
-              type={showPassword ? 'password' : 'text'}
+              type={showPassword ? 'text' : 'password'}
               className='passwordInput'
               placeholder='Password'
               id='password'
