@@ -313,3 +313,55 @@ a {
   object-fit: cover;
   margin: 0 auto;
 }
+
+exploreCategories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.exploreCategories a {
+  width: 48%;
+}
+
+.exploreCategoryImg {
+  min-height: 115px;
+  height: 15vw;
+  width: 100%;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.exploreCategoryName {
+  font-weight: 500;
+  text-align: left;
+}
+
+.category {
+  margin-bottom: 10rem;
+}
+
+.categoryListings {
+  padding: 0;
+}
+
+.categoryListing {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.categoryListingLink {
+  display: contents;
+}
+
+.categoryListingImg {
+  width: 30%;
+  height: 25vh;
+  border-radius: 1.5rem;
+  object-fit: cover;
+}
