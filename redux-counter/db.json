@@ -1,0 +1,18 @@
+{
+  "contacts": [
+    {
+      "id": "c3tgj56-235fsd-53fdfh-j7j67",
+      "name": "Peter",
+      "email": "peter@gmail.com",
+      "address": "Sofia",
+      "phone": "0812345678"
+    },
+    {
+      "id": "c3tbb5n56-23bcb5f-5sddfh-j7f37",
+      "name": "John",
+      "email": "john@gmail.com",
+      "address": "London",
+      "phone": "0812345678"
+    }
+  ]
+}
