@@ -51,7 +51,7 @@ function Offers() {
     fetchListings()
   }, [])
 
-  return <div className="category">
+  return <div className="category pageContainer">
     <header>
       <p className='pageHeader'>
         Offers

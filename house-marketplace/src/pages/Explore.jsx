@@ -4,13 +4,13 @@ import sellCategoryImage from '../assets/jpg/sellCategoryImage.jpg'
 
 function Explore() {
   return (
-    <div>
+    <div className="pageContainer">
       <header>
-        <p>Explore</p>
+        <h2>Explore</h2>
       </header>
 
       <main>
-        <p>Categories</p>
+        <p>Categories :</p>
         <div className="exploreCategory">
           <Link to='/category/rent'>
             <img
