@@ -1,17 +1,17 @@
 # Learning React by building projects
 
 ## Feedback 
-- Live demo: [Calculator](https://feedback-app-7763b4.netlify.app/)
+- Live demo: [Feedback](https://feedback-app-7763b4.netlify.app/)
 - Code: [GitHub Project Link](https://github.com/VentsiGeorgiev/React-apps/tree/main/feedback)
 
 ---
 ## House Marketplace
-- Live demo: [Calculator](https://house-marketplace-ec1b1b.netlify.app/)
+- Live demo: [House Marketplace](https://house-marketplace-ec1b1b.netlify.app/)
 - Code: [GitHub Project Link](https://github.com/VentsiGeorgiev/React-apps/tree/main/house-marketplace)
 
 ---
 ## GitHub Finder
-- Live demo: [Calculator](https://github-finder-ec1b1b.netlify.app/)
+- Live demo: [GitHub Finder](https://github-finder-ec1b1b.netlify.app/)
 - Code: [GitHub Project Link](https://github.com/VentsiGeorgiev/React-apps/tree/main/github-finder)
 
 ---
