@@ -49,8 +49,8 @@ function App() {
             movies?.length > 0
               ? (
                 <div className="all-movies">
-                  {movies.map((movie) =>
-                    <MovieCard movie={movie} />
+                  {movies.map((movie, index) =>
+                    <MovieCard key={index} movie={movie} />
                   )}
                 </div>
               ) : (
