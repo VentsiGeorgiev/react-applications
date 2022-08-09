@@ -165,6 +165,8 @@ function CreateListing() {
       return
     })
 
+    console.log(imgUrls)
+
     const formDataCopy = {
       ...formData,
       imgUrls,
