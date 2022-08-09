@@ -34,3 +34,10 @@
   cursor: pointer;
   padding: 6px;
 }
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  cursor: pointer;
+}

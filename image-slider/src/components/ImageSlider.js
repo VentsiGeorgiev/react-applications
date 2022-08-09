@@ -20,11 +20,20 @@ function ImageSlider({ slides }) {
     }
   }
 
+  const goToSlide = (index) => {
+    setCurrentIndex(index)
+  }
+
   return (
     <div className={styles['slide-container']}>
       <div onClick={goToPrevious} className={styles['left-arrow']}>&larr;</div>
       <div onClick={goToNext} className={styles['right-arrow']}>&rarr;</div>
       <div style={slideImage} className={styles.slide}></div>
+      <div className={styles.dots}>
+        {slides.map((slide, index) => (
+          <div onClick={() => goToSlide(index)} key={index}>&#x25CF;</div>
+        ))}
+      </div>
     </div>
   );
 
