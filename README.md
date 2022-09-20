@@ -44,6 +44,24 @@
                 </a>
             </td>
         </tr>
+        <tr>
+            <td>
+                <a 
+                href="https://image-slider-570335.netlify.app/"
+                target="_blank"
+                >
+                Image Slider
+                </a>
+            </td>
+            <td>
+                <a 
+                href="https://github.com/VentsiGeorgiev/React-apps/tree/main/image-slider"
+                target="_blank"
+                >
+                Link
+                </a>
+            </td>
+        </tr>
     </tbody>
 </table>
 

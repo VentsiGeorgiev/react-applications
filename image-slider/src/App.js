@@ -11,7 +11,6 @@ const App = () => {
 
   return (
     <div>
-      <h1>Image Slider</h1>
       <div className="slider-container">
         <ImageSlider slides={slides} />
       </div>
