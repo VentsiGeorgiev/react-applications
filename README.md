@@ -62,6 +62,60 @@
                 </a>
             </td>
         </tr>
+        <tr>
+            <td>
+                <a 
+                href="https://weather-app-014bc9.netlify.app/"
+                target="_blank"
+                >
+                Weather App
+                </a>
+            </td>
+            <td>
+                <a 
+                href="https://github.com/VentsiGeorgiev/React-apps/tree/main/weather-app"
+                target="_blank"
+                >
+                Link
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a 
+                href="https://todo-app-f0b904.netlify.app/"
+                target="_blank"
+                >
+                Todo App
+                </a>
+            </td>
+            <td>
+                <a 
+                href="https://github.com/VentsiGeorgiev/React-apps/tree/main/todo-app"
+                target="_blank"
+                >
+                Link
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a 
+                href="https://calculator-a50081.netlify.app/"
+                target="_blank"
+                >
+                Calculator
+                </a>
+            </td>
+            <td>
+                <a 
+                href="https://github.com/VentsiGeorgiev/React-apps/tree/main/calculator"
+                target="_blank"
+                >
+                Link
+                </a>
+            </td>
+        </tr>
     </tbody>
 </table>
 
@@ -69,26 +123,5 @@
 
 -   Live demo: [GitHub Finder](https://github-finder-ec1b1b.netlify.app/)
 -   Code: [GitHub Project Link](https://github.com/VentsiGeorgiev/React-apps/tree/main/github-finder)
-
----
-
-## Weather app
-
--   Live demo: [Weather app](https://weather-app-014bc9.netlify.app/)
--   Code: [GitHub Project Link](https://github.com/VentsiGeorgiev/React-apps/tree/main/weather-app)
-
----
-
-## Todo app
-
--   Live demo: [Todo app](https://todo-app-f0b904.netlify.app/)
--   Code: [GitHub Project Link](https://github.com/VentsiGeorgiev/React-apps/tree/main/todo-app)
-
----
-
-## Calculator
-
--   Live demo: [Calculator](https://calculator-a50081.netlify.app/)
--   Code: [GitHub Project Link](https://github.com/VentsiGeorgiev/React-apps/tree/main/calculator)
 
 ---
