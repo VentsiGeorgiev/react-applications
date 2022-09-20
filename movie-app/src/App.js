@@ -3,11 +3,18 @@ import MovieCard from './components/MovieCard';
 
 import './App.css';
 
-const API_URL = 'http://www.omdbapi.com?apikey=45057cc6';
-
+const API_URL = `http://www.omdbapi.com?apikey=${process.env.REACT_APP_API_KEY}`;
 
 
 function App() {
+
+  let envg = process.env.REACT_APP_NOT_SECRET_CODE;
+  console.log('envg');
+  console.log(envg);
+  console.log('envg');
+
+
+
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 

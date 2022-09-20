@@ -116,6 +116,24 @@
                 </a>
             </td>
         </tr>
+        <tr>
+            <td>
+                <a 
+                href="https://github.com/VentsiGeorgiev/React-apps/tree/main/movie-app"
+                target="_blank"
+                >
+                Movie
+                </a>
+            </td>
+            <td>
+                <a 
+                href="https://github.com/VentsiGeorgiev/React-apps/tree/main/movie-app"
+                target="_blank"
+                >
+                Link
+                </a>
+            </td>
+        </tr>
     </tbody>
 </table>
 
