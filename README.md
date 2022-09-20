@@ -26,22 +26,26 @@
                 </a>
             </td>
         </tr>
+        <tr>
+            <td>
+                <a 
+                href="https://house-marketplace-e9fbe3.netlify.app/"
+                target="_blank"
+                >
+                House Marketplace
+                </a>
+            </td>
+            <td>
+                <a 
+                href="https://github.com/VentsiGeorgiev/React-apps/tree/main/house-marketplace"
+                target="_blank"
+                >
+                Link
+                </a>
+            </td>
+        </tr>
     </tbody>
 </table>
-
-## Feedback
-
--   Live demo: [Feedback](https://feedback-app-7763b4.netlify.app/)
--   Code: [GitHub Project Link](https://github.com/VentsiGeorgiev/React-apps/tree/main/feedback)
-
----
-
-## House Marketplace
-
--   Live demo: [House Marketplace](https://house-marketplace-ec1b1b.netlify.app/)
--   Code: [GitHub Project Link](https://github.com/VentsiGeorgiev/React-apps/tree/main/house-marketplace)
-
----
 
 ## GitHub Finder
 
