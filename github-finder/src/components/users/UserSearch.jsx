@@ -14,13 +14,14 @@ function UserSearch() {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault() 
 
-    if (text.trim() === '') {
+    if (text.trim() === '') { 
       setAlert('Search field is required', 'error')
     } else {
       dispatch({ type: 'SET_LOADING' })
       const users = await searchUsers(text)
+      console.log(users);
       dispatch({ type: 'GET_USERS', payload: users })
 
       setText('')

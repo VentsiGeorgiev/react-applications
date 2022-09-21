@@ -5,10 +5,12 @@ function Alert() {
   const { alert } = useContext(AlertContext)
 
   return alert !== null && (
-    <p>
-      {alert.type === 'error' && (
+    <div className='error-wrapper'>
+    <p className='error'> {alert.type === 'error' && (
         <strong>{alert.msg}</strong>
-      )}</p>
+        )}
+      </p>
+        </div>
   )
 
 }

@@ -1,9 +1,7 @@
-import spinner from './assets/spinner.gif'
-
 function Spinner() {
   return (
-    <div>
-      <img src={spinner} alt="Loading..." />
+    <div className='center-loader'>
+      <div class="lds-dual-ring"></div>
     </div>
   )
 }

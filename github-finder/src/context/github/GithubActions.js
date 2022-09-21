@@ -1,16 +1,22 @@
-const GITHUB_URL = process.env.REACT_APP_GITHUB_URL
+const GITHUB_URL = process.env.REACT_APP_GITHUB_URL || "https://api.github.com"
 
 // # Search users
 export const searchUsers = async (text) => {
+  try {
+    const params = new URLSearchParams({
+      q: text
+    })
 
-  const params = new URLSearchParams({
-    q: text
-  })
+    console.log(text);
 
-  const res = await fetch(`${GITHUB_URL}/search/users?${params}`)
-  const { items } = await res.json()
+    const res = await fetch(`${GITHUB_URL}/search/users?${params}`)
+    const { items } = await res.json()
 
-  return items
+    return items
+  } catch (error) {
+    console.log(error);
+  }
+
 }
 
 // # Single user
