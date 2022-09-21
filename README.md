@@ -134,6 +134,24 @@
                 </a>
             </td>
         </tr>
+        <tr>
+            <td>
+                <a 
+                href="https://github-finder-503333.netlify.app/"
+                target="_blank"
+                >
+                GitHub Finder
+                </a>
+            </td>
+            <td>
+                <a 
+                href="https://github.com/VentsiGeorgiev/React-apps/tree/main/github-finder"
+                target="_blank"
+                >
+                Link
+                </a>
+            </td>
+        </tr>
     </tbody>
 </table>
 
