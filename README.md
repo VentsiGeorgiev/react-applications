@@ -11,6 +11,24 @@
         <tr>
             <td>
                 <a 
+                href="https://candy-crush-6fb84b.netlify.app/"
+                target="_blank"
+                >
+                Candy Crush Game
+                </a>
+            </td>
+            <td>
+                <a 
+                href="https://github.com/VentsiGeorgiev/react-applications/tree/main/candy-crush"
+                target="_blank"
+                >
+                Link
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a 
                 href="https://feedback-d8a792.netlify.app/"
                 target="_blank"
                 >
