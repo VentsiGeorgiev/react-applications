@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import ScoreBoard from './components/ScoreBoard';
 import blueCandy from './images/blue.png';
 import greenCandy from './images/green.png';
 import pinkCandy from './images/pink.png';
@@ -23,6 +24,7 @@ function App() {
     const [arrangeColors, setArrangeColors] = useState([]);
     const [squareBeingDragged, setSquareBeingDragged] = useState(null);
     const [squareBeingReplaced, setSquareBeingReplaced] = useState(null);
+    const [score, setScore] = useState(0);
 
     // # Generate colors
     const boardColors = [];
@@ -63,6 +65,7 @@ function App() {
             const decidedColor = arrangeColors[i];
 
             if (columnOfThree.every(square => arrangeColors[square] === decidedColor)) {
+                setScore((prevScore) => prevScore + 30);
                 columnOfThree.forEach(square => arrangeColors[square] = blank);
                 return true;
             }
@@ -76,6 +79,7 @@ function App() {
             const decidedColor = arrangeColors[i];
 
             if (columnOfFour.every(square => arrangeColors[square] === decidedColor)) {
+                setScore((prevScore) => prevScore + 40);
                 columnOfFour.forEach(square => arrangeColors[square] = blank);
                 return true;
             }
@@ -96,6 +100,7 @@ function App() {
             }
 
             if (rowOfThree.every(square => arrangeColors[square] === decidedColor)) {
+                setScore((prevScore) => prevScore + 30);
                 rowOfThree.forEach(square => arrangeColors[square] = blank);
                 return true;
             }
@@ -115,6 +120,7 @@ function App() {
             }
 
             if (rowOfFour.every(square => arrangeColors[square] === decidedColor)) {
+                setScore((prevScore) => prevScore + 40);
                 rowOfFour.forEach(square => arrangeColors[square] = blank);
                 return true;
             }
@@ -185,27 +191,30 @@ function App() {
     };
 
     return (
-        <div className='app'>
-            <div className='app-wrapper'>
-                {arrangeColors.map((color, index) => (
-                    <img
-                        src={color}
-                        alt='candy'
-                        key={index}
-                        className='color'
-                        data-id={index}
-                        draggable={true}
-                        onDragStart={dragStart}
-                        onDragOver={(e) => e.preventDefault()}
-                        onDragEnter={(e) => e.preventDefault()}
-                        onDragLeave={(e) => e.preventDefault()}
-                        onDrop={dragDrop}
-                        onDragEnd={dragEnd}
-                    />
-                ))}
-            </div>
+        <>
+            <ScoreBoard score={score} />
+            <div className='app'>
+                <div className='app-wrapper'>
+                    {arrangeColors.map((color, index) => (
+                        <img
+                            src={color}
+                            alt='candy'
+                            key={index}
+                            className='color'
+                            data-id={index}
+                            draggable={true}
+                            onDragStart={dragStart}
+                            onDragOver={(e) => e.preventDefault()}
+                            onDragEnter={(e) => e.preventDefault()}
+                            onDragLeave={(e) => e.preventDefault()}
+                            onDrop={dragDrop}
+                            onDragEnd={dragEnd}
+                        />
+                    ))}
+                </div>
 
-        </div>
+            </div>
+        </>
     );
 }
 
