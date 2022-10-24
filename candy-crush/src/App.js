@@ -16,8 +16,8 @@ function App() {
     const [arrangeColors, setArrangeColors] = useState([]);
 
     // # Generate colors
+    const boardColors = [];
     const generateColors = () => {
-        const boardColors = [];
         for (let i = 0; i < width * width; i++) {
             boardColors.push(candyColors[Math.floor(Math.random() * candyColors.length)]);
         }
@@ -27,6 +27,25 @@ function App() {
     useEffect(() => {
         generateColors();
     }, []);
+
+
+    const moveColorsDown = useCallback(() => {
+        for (let i = 0; i < 64 - width; i++) {
+
+            const firstRow = [0, 1, 2, 3, 4, 5, 6, 7];
+            const isFirstRow = firstRow.includes(i);
+
+            if (isFirstRow && arrangeColors[i] === '') {
+                let randomNumber = Math.floor(Math.random() * candyColors.length);
+                arrangeColors[i] = candyColors[randomNumber];
+            }
+
+            if ((arrangeColors[i + width]) === '') {
+                arrangeColors[i + width] = arrangeColors[i];
+                arrangeColors[i] = '';
+            }
+        }
+    }, [arrangeColors]);
 
     // # Check for column of three
     const checkForColumnOfThree = useCallback(() => {
@@ -97,13 +116,14 @@ function App() {
             checkForColumnOfFour();
             checkFoRowOfThree();
             checkFoRowOfFour();
+            moveColorsDown();
             setArrangeColors([...arrangeColors]);
         }, 100);
 
         return () => {
             clearTimeout(timer);
         };
-    }, [checkForColumnOfThree, arrangeColors, checkForColumnOfFour, checkFoRowOfThree, checkFoRowOfFour]);
+    }, [checkForColumnOfThree, arrangeColors, checkForColumnOfFour, checkFoRowOfThree, checkFoRowOfFour, moveColorsDown]);
 
 
 
