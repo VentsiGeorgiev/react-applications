@@ -14,6 +14,8 @@ const candyColors = [
 function App() {
 
     const [arrangeColors, setArrangeColors] = useState([]);
+    const [squareBeingDragged, setSquareBeingDragged] = useState(null);
+    const [squareBeingReplaced, setSquareBeingReplaced] = useState(null);
 
     // # Generate colors
     const boardColors = [];
@@ -55,6 +57,7 @@ function App() {
 
             if (columnOfThree.every(square => arrangeColors[square] === decidedColor)) {
                 columnOfThree.forEach(square => arrangeColors[square] = '');
+                return true;
             }
         }
     }, [arrangeColors]);
@@ -67,13 +70,14 @@ function App() {
 
             if (columnOfFour.every(square => arrangeColors[square] === decidedColor)) {
                 columnOfFour.forEach(square => arrangeColors[square] = '');
+                return true;
             }
         }
     }, [arrangeColors]);
 
 
     // # Check for row of three
-    const checkFoRowOfThree = useCallback(() => {
+    const checkForRowOfThree = useCallback(() => {
         for (let i = 0; i < 64; i++) {
             const rowOfThree = [i, i + 1, i + 2];
             const decidedColor = arrangeColors[i];
@@ -86,12 +90,13 @@ function App() {
 
             if (rowOfThree.every(square => arrangeColors[square] === decidedColor)) {
                 rowOfThree.forEach(square => arrangeColors[square] = '');
+                return true;
             }
         }
     }, [arrangeColors]);
 
     // # Check for row of four
-    const checkFoRowOfFour = useCallback(() => {
+    const checkForRowOfFour = useCallback(() => {
         for (let i = 0; i < 64; i++) {
             const rowOfFour = [i, i + 1, i + 2, i + 3];
             const decidedColor = arrangeColors[i];
@@ -104,6 +109,7 @@ function App() {
 
             if (rowOfFour.every(square => arrangeColors[square] === decidedColor)) {
                 rowOfFour.forEach(square => arrangeColors[square] = '');
+                return true;
             }
         }
     }, [arrangeColors]);
@@ -114,8 +120,8 @@ function App() {
 
             checkForColumnOfThree();
             checkForColumnOfFour();
-            checkFoRowOfThree();
-            checkFoRowOfFour();
+            checkForRowOfThree();
+            checkForRowOfFour();
             moveColorsDown();
             setArrangeColors([...arrangeColors]);
         }, 100);
@@ -123,9 +129,50 @@ function App() {
         return () => {
             clearTimeout(timer);
         };
-    }, [checkForColumnOfThree, arrangeColors, checkForColumnOfFour, checkFoRowOfThree, checkFoRowOfFour, moveColorsDown]);
+    }, [checkForColumnOfThree, arrangeColors, checkForColumnOfFour, checkForRowOfThree, checkForRowOfFour, moveColorsDown]);
 
 
+    const dragStart = (e) => {
+        console.log('drag start');
+        console.log(e.target);
+        setSquareBeingDragged(e.target);
+    };
+
+    const dragDrop = (e) => {
+        console.log('drag drop');
+        console.log(e.target);
+        setSquareBeingReplaced(e.target);
+    };
+
+    const dragEnd = (e) => {
+        console.log('drag end');
+        const squareBeingDraggedId = parseInt(squareBeingDragged.getAttribute('data-id'));
+        const squareBeingReplacedId = parseInt(squareBeingReplaced.getAttribute('data-id'));
+
+        const validMoves = [
+            squareBeingDraggedId - 1,
+            squareBeingDraggedId - width,
+            squareBeingDraggedId + 1,
+            squareBeingDraggedId + width
+        ];
+
+        const validMove = validMoves.includes(squareBeingReplacedId);
+
+        const isAColumnOfThree = checkForColumnOfThree();
+        const isAColumnOfFour = checkForColumnOfFour();
+        const isARowOfThree = checkForRowOfThree();
+        const isARowOfFour = checkForRowOfFour();
+
+        if (squareBeingReplaced &&
+            validMove && (isAColumnOfThree || isAColumnOfFour || isARowOfThree || isARowOfFour)) {
+            setSquareBeingDragged(null);
+            setSquareBeingReplaced(null);
+        } else {
+            arrangeColors[squareBeingDraggedId] = squareBeingReplaced.style.backgroundColor;
+            arrangeColors[squareBeingReplacedId] = squareBeingDragged.style.backgroundColor;
+            setArrangeColors([...arrangeColors]);
+        }
+    };
 
     return (
         <div className='app'>
@@ -135,6 +182,14 @@ function App() {
                         key={index}
                         className='color'
                         style={{ backgroundColor: color }}
+                        data-id={index}
+                        draggable={true}
+                        onDragStart={dragStart}
+                        onDragOver={(e) => e.preventDefault()}
+                        onDragEnter={(e) => e.preventDefault()}
+                        onDragLeave={(e) => e.preventDefault()}
+                        onDrop={dragDrop}
+                        onDragEnd={dragEnd}
                     >
 
                     </div>
