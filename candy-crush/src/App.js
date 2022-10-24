@@ -1,13 +1,20 @@
 import { useCallback, useEffect, useState } from 'react';
+import blueCandy from './images/blue.png';
+import greenCandy from './images/green.png';
+import pinkCandy from './images/pink.png';
+import purpleCandy from './images/purple.png';
+import redCandy from './images/red.png';
+import yellowCandy from './images/yellow.png';
+import blank from './images/yellow.png';
 
 const width = 8;
 const candyColors = [
-    'blue',
-    'green',
-    'orange',
-    'purple',
-    'red',
-    'yellow',
+    blueCandy,
+    greenCandy,
+    pinkCandy,
+    purpleCandy,
+    redCandy,
+    yellowCandy,
 ];
 
 
@@ -37,14 +44,14 @@ function App() {
             const firstRow = [0, 1, 2, 3, 4, 5, 6, 7];
             const isFirstRow = firstRow.includes(i);
 
-            if (isFirstRow && arrangeColors[i] === '') {
+            if (isFirstRow && arrangeColors[i] === blank) {
                 let randomNumber = Math.floor(Math.random() * candyColors.length);
                 arrangeColors[i] = candyColors[randomNumber];
             }
 
-            if ((arrangeColors[i + width]) === '') {
+            if ((arrangeColors[i + width]) === blank) {
                 arrangeColors[i + width] = arrangeColors[i];
-                arrangeColors[i] = '';
+                arrangeColors[i] = blank;
             }
         }
     }, [arrangeColors]);
@@ -56,7 +63,7 @@ function App() {
             const decidedColor = arrangeColors[i];
 
             if (columnOfThree.every(square => arrangeColors[square] === decidedColor)) {
-                columnOfThree.forEach(square => arrangeColors[square] = '');
+                columnOfThree.forEach(square => arrangeColors[square] = blank);
                 return true;
             }
         }
@@ -69,7 +76,7 @@ function App() {
             const decidedColor = arrangeColors[i];
 
             if (columnOfFour.every(square => arrangeColors[square] === decidedColor)) {
-                columnOfFour.forEach(square => arrangeColors[square] = '');
+                columnOfFour.forEach(square => arrangeColors[square] = blank);
                 return true;
             }
         }
@@ -89,7 +96,7 @@ function App() {
             }
 
             if (rowOfThree.every(square => arrangeColors[square] === decidedColor)) {
-                rowOfThree.forEach(square => arrangeColors[square] = '');
+                rowOfThree.forEach(square => arrangeColors[square] = blank);
                 return true;
             }
         }
@@ -108,7 +115,7 @@ function App() {
             }
 
             if (rowOfFour.every(square => arrangeColors[square] === decidedColor)) {
-                rowOfFour.forEach(square => arrangeColors[square] = '');
+                rowOfFour.forEach(square => arrangeColors[square] = blank);
                 return true;
             }
         }
@@ -149,6 +156,9 @@ function App() {
         const squareBeingDraggedId = parseInt(squareBeingDragged.getAttribute('data-id'));
         const squareBeingReplacedId = parseInt(squareBeingReplaced.getAttribute('data-id'));
 
+        arrangeColors[squareBeingReplacedId] = squareBeingDragged.getAttribute('src');
+        arrangeColors[squareBeingDraggedId] = squareBeingReplaced.getAttribute('src');
+
         const validMoves = [
             squareBeingDraggedId - 1,
             squareBeingDraggedId - width,
@@ -168,8 +178,8 @@ function App() {
             setSquareBeingDragged(null);
             setSquareBeingReplaced(null);
         } else {
-            arrangeColors[squareBeingDraggedId] = squareBeingReplaced.style.backgroundColor;
-            arrangeColors[squareBeingReplacedId] = squareBeingDragged.style.backgroundColor;
+            arrangeColors[squareBeingReplacedId] = squareBeingDragged.getAttribute('src');
+            arrangeColors[squareBeingDraggedId] = squareBeingReplaced.getAttribute('src');
             setArrangeColors([...arrangeColors]);
         }
     };
@@ -178,10 +188,11 @@ function App() {
         <div className='app'>
             <div className='app-wrapper'>
                 {arrangeColors.map((color, index) => (
-                    <div
+                    <img
+                        src={color}
+                        alt='candy'
                         key={index}
                         className='color'
-                        style={{ backgroundColor: color }}
                         data-id={index}
                         draggable={true}
                         onDragStart={dragStart}
@@ -190,9 +201,7 @@ function App() {
                         onDragLeave={(e) => e.preventDefault()}
                         onDrop={dragDrop}
                         onDragEnd={dragEnd}
-                    >
-
-                    </div>
+                    />
                 ))}
             </div>
 
